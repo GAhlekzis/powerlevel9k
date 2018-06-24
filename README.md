@@ -2,11 +2,15 @@
 This master is based on Pull Request 859 (Staging 0.6.5) because of some fixes i needed.
 If you decide to update to a newer Pull Request fetch it into a branch and merge:
 '''
+git checkout master
 git fetch upstream pull/ID/head:BRANCHNAME
+git merge BRANCHNAME
 '''
 If you decide to update with a newer version of master pull like this and merge:
 '''
-git pull origin
+git checkout master
+git fetch upstream master:BRANCHNAME
+git merge BRANCHNAME
 '''
 
 
