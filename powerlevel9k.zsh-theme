@@ -271,6 +271,9 @@ right_prompt_segment() {
       # To avoid cutting off the visual identifier in some terminal emulators (e.g., Konsole, st),
       # we need to color both the visual identifier and the whitespace.
       [[ -n "$5" ]] && visual_identifier=" $visual_identifier"
+      # If segment is empty and this is the first segment add a whitespace BEHIND the identifier,
+      # so it does not get cut off. (happens with the checkmark)
+      [[ -z "$5" ]] && [[ "$CURRENT_RIGHT_BG" == "NONE" ]] && visual_identifier="$visual_identifier "
       # Allow users to overwrite the color for the visual identifier only.
       local visual_identifier_color_variable=POWERLEVEL9K_${(U)${segment_name}#prompt_}_VISUAL_IDENTIFIER_COLOR
       set_default $visual_identifier_color_variable "${foregroundColor}"
@@ -286,7 +289,7 @@ right_prompt_segment() {
   # Print segment content if there is any
   [[ -n "$5" ]] && echo -n "${5}"
   # Print the visual identifier
-  echo -n "${visual_identifier}"
+  echo -n "${visual_identifier}${POWERLEVEL9K_WHITESPACE_BETWEEN_RIGHT_SEGMENTS}%f"
 
   CURRENT_RIGHT_BG="${backgroundColor}"
   last_right_element_index=$current_index
