@@ -1,3 +1,18 @@
+#### UPDATE A FORK:
+```
+git remote add upstream https://github.com/whoever/whatever.git
+
+git fetch upstream
+
+git checkout master
+
+git rebase upstream/master
+```
+then after thats done:
+```
+git push -f origin master
+```
+
 #### FETCH A PULL REQUEST:
 This master is based on Pull Request 859 (Staging 0.6.5) because of some fixes i needed.
 If you decide to update to a newer Pull Request(ID) fetch it into a branch and merge:
