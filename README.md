@@ -239,6 +239,7 @@ systems without a battery). It is supported on both OSX and Linux (note that it 
 |`POWERLEVEL9K_BATTERY_LOW_THRESHOLD`|`10`|Threshold to consider battery level critical.|
 |`POWERLEVEL9K_BATTERY_LOW_COLOR`|`"red"`|Color to indicate critically low charge level.|
 |`POWERLEVEL9K_BATTERY_VERBOSE`|`true`|Display time remaining next to battery level.|
+|`POWERLEVEL9K_BATTERY_HIDE_ABOVE_THRESHOLD`|`unset`|Threshold from which the battery segment should not be displayed.|
 
 Note that you can [modify the `_FOREGROUND`
 color](https://github.com/bhilburn/powerlevel9k/wiki/Stylizing-Your-Prompt#segment-color-customization)
@@ -602,10 +603,6 @@ It figures out the version being used by taking the output of the `rbenv version
 
 * If `rbenv` is not in $PATH, nothing will be shown.
 * By default, if the current local Ruby version is the same as the global Ruby version, nothing will be shown. See the configuration variable, below, to modify this behavior.
-
-Variable | Default Value | Description |
-|----------|---------------|-------------|
-|`POWERLEVEL9K_RBENV_ALWAYS`|'false'|Always show the `rbenv` segment, even if the local version matches the global.|
 
 | Variable | Default Value | Description |
 |----------|---------------|-------------|
